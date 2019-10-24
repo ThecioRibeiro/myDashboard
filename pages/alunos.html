@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../assets/css/adminlte.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
 
 </head>
 
@@ -240,7 +241,7 @@
                         <div class="col-md-12">
                             <div class="card card-primary">
                                 <div class="card-header">
-                                    <h3 class="card-title">Primary Outline</h3>
+                                    <h3 class="card-title">Cadastrar aluno</h3>
 
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
@@ -251,19 +252,93 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="">Nome do aluno</label>
-                                            <input id="nomeAluno" type="text" class="form-control">
+                                    <form id = 'formAdicionarAluno'>
+                                        <div class="row">
+                                            <form>
+                                                <div class="col-sm-12 col-md-4 col-lg-5">
+                                                    <div class="form-group">
+                                                        <label for="nomeAluno">Nome do aluno</label>
+                                                        <input id="nomeAluno" type="text" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-2 col-lg-1">
+                                                    <!-- nome do aluno -->
+                                                    <div class="form-group">
+                                                        <label for="primeiroBi">1º Bim</label>
+                                                        <input id="primeiroBi" type="text" class="form-control"
+                                                            required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-2 col-lg-1">
+                                                    <!-- bimestres -->
+                                                    <div class="form-group">
+                                                        <label for="segundoBi">2º Bim</label>
+                                                        <input id="segundoBi" type="text" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-2 col-lg-1">
+                                                    <!-- bimestres -->
+                                                    <div class="form-group">
+                                                        <label for="terceiroBi">3º Bim</label>
+                                                        <input id="terceiroBi" type="text" class="form-control"
+                                                            required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-2 col-lg-1">
+                                                    <!-- bimestres -->
+                                                    <div class="form-group">
+                                                        <label for="quartoBi">4º Bim</label>
+                                                        <input id="quartoBi" type="text" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-3 col-lg-3">
+                                                    <!-- botao -->
+                                                    <div class="form-group pt-30">
+                                                        <button type="button" class="btn btn-primary"
+                                                            onclick="adicionarAluno()">
+                                                            <i class="fas fa-plus"></i>Adicionar
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+                                        </div>
+                                    </form>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="card">
+                                                <!-- /.card-header -->
+                                                <div class="card-body table-responsive p-0">
+                                                    <table id="listagemAlunos" class="table table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Aluno</th>
+                                                                <th>1º Bim</th>
+                                                                <th>2º Bim</th>
+                                                                <th>3º Bim</th>
+                                                                <th>4º Bim</th>
+                                                                <th>Total</th>
+                                                                <th>Média</th>
+                                                                <th>Situação</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- /.card-body -->
+                                            </div>
+                                            <!-- /.card -->
                                         </div>
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
 
                     </div>
-                    <div class="row"></div>
 
                     <!-- /.row -->
                 </div><!-- /.container-fluid -->
@@ -306,6 +381,8 @@
     <script src="../assets/js/bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../assets/js/adminlte.min.js"></script>
+
+    <script src="../assets/js/alunos.js"></script>
 </body>
 
 </html>
