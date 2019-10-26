@@ -185,13 +185,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="" class="nav-link active">
+                                    <a href="../pages/alunos.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Alunos</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../pages/orcamento.html" class="nav-link">
+                                    <a href="#" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Orçamento escolar</p>
                                     </a>
@@ -218,7 +218,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">Starter Page</h1>
+                            <h1 class="m-0 text-dark">Orçamento escolar</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -239,7 +239,7 @@
                         <div class="col-md-12">
                             <div class="card card-primary">
                                 <div class="card-header">
-                                    <h3 class="card-title">Cadastrar aluno</h3>
+                                    <h3 class="card-title">Orçamento prévio de material escolar</h3>
 
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
@@ -252,125 +252,92 @@
                                 <div class="card-body">
                                     <form id='formAdicionarAluno'>
                                         <div class="row">
-                                            <form>
-                                                <div class="col-sm-12 col-md-4 col-lg-5">
-                                                    <div class="form-group">
-                                                        <label for="nomeAluno">Nome do aluno</label>
-                                                        <input id="nomeAluno" type="text" class="form-control" required>
-                                                    </div>
+                                            <div class="col-sm-12 col-md-4 col-lg-5">
+                                                <div class="form-group">
+                                                    <label for="nomeAluno">Nome do aluno</label>
+                                                    <input id="nomeAluno" type="text" class="form-control" required>
                                                 </div>
-                                                <div class="col-sm-12 col-md-2 col-lg-1">
-                                                    <!-- nome do aluno -->
-                                                    <div class="form-group">
-                                                        <label for="primeiroBi">1º Bim</label>
-                                                        <input id="primeiroBi" type="text" class="form-control"
-                                                            required>
-                                                    </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-2 col-lg-1">
+                                                <!-- nome do aluno -->
+                                                <div class="form-group">
+                                                    <label for="possoGastar">Posso gastar até</label>
+                                                    <input id="possoGastar" type="number" class="form-control" required>
                                                 </div>
-                                                <div class="col-sm-12 col-md-2 col-lg-1">
-                                                    <!-- bimestres -->
-                                                    <div class="form-group">
-                                                        <label for="segundoBi">2º Bim</label>
-                                                        <input id="segundoBi" type="text" class="form-control" required>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-12 col-md-2 col-lg-1">
-                                                    <!-- bimestres -->
-                                                    <div class="form-group">
-                                                        <label for="terceiroBi">3º Bim</label>
-                                                        <input id="terceiroBi" type="text" class="form-control"
-                                                            required>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-12 col-md-2 col-lg-1">
-                                                    <!-- bimestres -->
-                                                    <div class="form-group">
-                                                        <label for="quartoBi">4º Bim</label>
-                                                        <input id="quartoBi" type="text" class="form-control" required>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-12 col-md-3 col-lg-3">
-                                                    <!-- botao -->
-                                                    <div class="form-group pt-30">
-                                                        <button type="button" class="btn btn-primary"
-                                                            onclick="adicionarAluno()">
-                                                            <i class="fas fa-plus"></i>Adicionar
-                                                        </button>
-                                                    </div>
+                                            </div>
 
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-2 col-lg-2">
+                                                <div class="form-group">
+                                                    <label for="possoGastar">Material escolar</label>
+                                                    <input id="possoGastar" type="number" class="form-control" required>
                                                 </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-2 col-lg-2">
+                                                <div class="form-group">
+                                                    <label for="possoGastar">Quantidade</label>
+                                                    <input id="possoGastar" type="number" class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-2 col-lg-2">
+                                                <div class="form-group">
+                                                    <label for="possoGastar">Preço unitário</label>
+                                                    <input id="possoGastar" type="number" class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-3 col-lg-3">
+                                                <!-- botao -->
+                                                <div class="form-group pt-30">
+                                                    <button type="button" class="btn btn-primary" onclick="">
+                                                        <i class="fas fa-plus"></i>Adicionar
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </form>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="card">
-                                                <!-- /.card-header -->
-                                                <div class="card-body table-responsive p-0">
-                                                    <table id="listagemAlunos" class="table table-hover">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>Aluno</th>
-                                                                <th>1º Bim</th>
-                                                                <th>2º Bim</th>
-                                                                <th>3º Bim</th>
-                                                                <th>4º Bim</th>
-                                                                <th>Total</th>
-                                                                <th>Média</th>
-                                                                <th>Situação</th>
-                                                                <th>Ações</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
+                                    <div class="col-12">
 
-                                                        </tbody>
-                                                    </table>
-                                                    <div class="row">
-                                                       <div class="col-sm-4">
-                                                           <h3 id="totalAlunos"></h3>
-                                                       </div>
-                                                    </div>
-                                                </div>
-                                                <!-- /.card-body -->
-                                            </div>
-                                            <!-- /.card -->
-                                        </div>
+                                        <!-- /.card -->
                                     </div>
                                 </div>
-                                <!-- /.card-body -->
                             </div>
+                            <!-- /.card-body -->
                         </div>
                     </div>
-                    <div class="row">
+                </div>
+                <div class="row">
 
-                    </div>
+                </div>
 
-                    <!-- /.row -->
-                </div><!-- /.container-fluid -->
-            </div>
-            <!-- /.content -->
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
         </div>
-        <!--#endregion-->
+        <!-- /.content -->
+    </div>
+    <!--#endregion-->
 
-        <!-- #region Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <div class="p-3">
-                <h5>Title</h5>
-                <p>Sidebar content</p>
-            </div>
-        </aside>
-        <!--#endregion -->
+    <!-- #region Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <div class="p-3">
+            <h5>Title</h5>
+            <p>Sidebar content</p>
+        </div>
+    </aside>
+    <!--#endregion -->
 
-        <!--#region Footer -->
-        <footer class="main-footer">
-            <!-- To the right -->
-            <div class="float-right d-none d-sm-inline">
-                Anything you want
-            </div>
-            <!-- Default to the left -->
-            <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
-            reserved.
-        </footer>
-        <!--#endregion -->
+    <!--#region Footer -->
+    <footer class="main-footer">
+        <!-- To the right -->
+        <div class="float-right d-none d-sm-inline">
+            Anything you want
+        </div>
+        <!-- Default to the left -->
+        <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
+        reserved.
+    </footer>
+    <!--#endregion -->
     </div>
     <!-- ./wrapper -->
 
