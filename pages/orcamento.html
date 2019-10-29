@@ -262,7 +262,12 @@
                                                 <!-- nome do aluno -->
                                                 <div class="form-group">
                                                     <label for="possoGastar">Posso gastar até</label>
-                                                    <input id="possoGastar" type="number" class="form-control" required>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">$</span>
+                                                        </div>
+                                                        <input id="possoGastar" type="number" class="form-control" onfocusout="habilitarBotao()" required >
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -271,28 +276,74 @@
                                         <div class="row">
                                             <div class="col-sm-12 col-md-2 col-lg-2">
                                                 <div class="form-group">
-                                                    <label for="possoGastar">Material escolar</label>
-                                                    <input id="possoGastar" type="number" class="form-control" required>
+                                                    <label for="materialEscolar">Material escolar</label>
+                                                    <input id="materialEscolar" type="text" class="form-control"
+                                                        required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-12 col-md-2 col-lg-2">
                                                 <div class="form-group">
-                                                    <label for="possoGastar">Quantidade</label>
-                                                    <input id="possoGastar" type="number" class="form-control" required>
+                                                    <label for="Quantidade">Quantidade</label>
+                                                    <input id="Quantidade" type="number" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-12 col-md-2 col-lg-2">
                                                 <div class="form-group">
-                                                    <label for="possoGastar">Preço unitário</label>
-                                                    <input id="possoGastar" type="number" class="form-control" required>
+                                                    <label for="precoUnitario">Preço unitário</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">$</span>
+                                                        </div>
+                                                        <input id="precoUnitario" type="number" class="form-control" required>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-sm-12 col-md-3 col-lg-3">
                                                 <!-- botao -->
                                                 <div class="form-group pt-30">
-                                                    <button type="button" class="btn btn-primary" onclick="">
+                                                    <button id="botaoAdicionar" type="button" class="btn btn-primary" onclick="adicionarMaterial()" disabled>
                                                         <i class="fas fa-plus"></i>Adicionar
                                                     </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <br>
+                                                <h3>Lista de materiais do aluno:</h3>
+                                                <br>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="card">
+                                                    <div class="card-body table-responsive p-0">
+                                                        <table id="listagemMateriais" class="table table-hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Material</th>
+                                                                    <th>Quantidade</th>
+                                                                    <th>Valor unitário</th>
+                                                                    <th>Total</th>
+                                                                </tr>
+                                                            </thead>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-6">
+                                                <!-- small card -->
+                                                <div id="cardCor" class="small-box bg-success">
+                                                    <div class="inner">
+                                                        <h3 id="totalGeral"></h3>
+
+                                                        <p id="quantidadeItensListados">quantidade de produtos</p>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="fas fa-shopping-cart"></i>
+                                                    </div>
+                                                    <a href="#" class="small-box-footer">
+                                                        <span id="totalDisponivel">R$</span>
+                                                        
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -355,6 +406,7 @@
     <script src="../assets/js/jquery.validate.js"></script>
     <script src="../assets/js/alunos.js"></script>
     <script src="../assets/js/toastr.min.js"></script>
+    <script src="../assets/js/orcamento.js"></script>
 </body>
 
 </html>
