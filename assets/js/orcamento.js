@@ -5,6 +5,7 @@ totalDisponivel: 0,
 quantidadeItensListados: 0};
 var aluno = '';
 
+adicionarItensLista();
 
 function adicionarMaterial() {
 
@@ -42,12 +43,13 @@ function adicionarMaterial() {
     listaMateriais.total= parseInt(listaMateriais.quantidade * listaMateriais.precoUnitario);
     listaMateriais.totalGeral = parseInt(listaMateriais.totalGeral + listaMateriais.total);
     listaMateriais.totalDisponivel = parseInt(listaMateriais.valorMax - listaMateriais.totalGeral);
-    listaMateriais.quantidadeItensListados = listaMateriais.quantidadeItensListados++;
+    listaMateriais.quantidadeItensListados++;
 
     if (listaMateriais.totalDisponivel < 0) {
         $('#cardCor').addClass('bg-danger');
         $('#cardCor').removeClass('bg-success');
         $('#totalDisponivel').text('Voce ultrapassou ' + listaMateriais.totalDisponivel *(-1)+ ' R$');
+        
         
     } else {
         $('#cardCor').addClass('bg-success');
@@ -55,8 +57,9 @@ function adicionarMaterial() {
         $('#totalDisponivel').text('Voce tem ' + listaMateriais.totalDisponivel+ ' R$ disponíveis');
     }
     $('#totalGeral').text('R$ ' + listaMateriais.totalGeral);
-    $('#quantidadeItensListados').text(listaMateriais.quantidadeItensListados+ ' produtos');
-    
+    $('#quantidadeItensListados').text('Itens listados: '+listaMateriais.quantidadeItensListados);
+    $('#nomeAlunoTitulo').text(' Lista de materiais do aluno: '+aluno);
+     
 
     if ($('#nomeAluno').valid()
         && $('#possoGastar').valid()
@@ -93,4 +96,26 @@ function adicionarLinhaTabela(objeto) {
         '<td>' + objeto.quantidade + '</td>' +
         '<td>' + objeto.precoUnitario + '</td>'+
         '<td>' + objeto.total + '</td>';
+}
+
+function adicionarItensLista() {
+
+    var itensDaLista = ['Caneta',
+    'Lápis',
+    'borracha',
+    'papel ofício',
+    'cartolina',
+    'lapis de cor',
+    'cola',
+    'marca texto',
+    'giz de cera'
+];
+
+itensDaLista.forEach(function(item){
+    $('#materialEscolar').append('<option>' + item + '</option>');
+});
+    
+    
+    //document.querySelector('select').innerHTML= '<option>Caderno</option>' +
+   
 }
