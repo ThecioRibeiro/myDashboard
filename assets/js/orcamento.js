@@ -1,11 +1,13 @@
 
 
-var listaMateriais = {totalGeral : 0,
-totalDisponivel: 0,
-quantidadeItensListados: 0};
+var listaMateriais = {
+    totalGeral: 0,
+    totalDisponivel: 0,
+    quantidadeItensListados: 0
+};
 var aluno = '';
 
-adicionarItensLista();
+carregarListbox();
 
 function adicionarMaterial() {
 
@@ -40,7 +42,7 @@ function adicionarMaterial() {
         $('#precoUnitario').addClass('is-invalid');
     }
 
-    listaMateriais.total= parseInt(listaMateriais.quantidade * listaMateriais.precoUnitario);
+    listaMateriais.total = parseInt(listaMateriais.quantidade * listaMateriais.precoUnitario);
     listaMateriais.totalGeral = parseInt(listaMateriais.totalGeral + listaMateriais.total);
     listaMateriais.totalDisponivel = parseInt(listaMateriais.valorMax - listaMateriais.totalGeral);
     listaMateriais.quantidadeItensListados++;
@@ -48,43 +50,41 @@ function adicionarMaterial() {
     if (listaMateriais.totalDisponivel < 0) {
         $('#cardCor').addClass('bg-danger');
         $('#cardCor').removeClass('bg-success');
-        $('#totalDisponivel').text('Voce ultrapassou ' + listaMateriais.totalDisponivel *(-1)+ ' R$');
-        
-        
+        $('#totalDisponivel').text('Voce ultrapassou ' + listaMateriais.totalDisponivel * (-1) + ' R$');
+
+
     } else {
         $('#cardCor').addClass('bg-success');
         $('#cardCor').removeClass('bg-danger');
-        $('#totalDisponivel').text('Voce tem ' + listaMateriais.totalDisponivel+ ' R$ disponíveis');
+        $('#totalDisponivel').text('Voce tem ' + listaMateriais.totalDisponivel + ' R$ disponíveis');
     }
     $('#totalGeral').text('R$ ' + listaMateriais.totalGeral);
-    $('#quantidadeItensListados').text('Itens listados: '+listaMateriais.quantidadeItensListados);
-    $('#nomeAlunoTitulo').text(' Lista de materiais do aluno: '+aluno);
-     
+    $('#quantidadeItensListados').text('Itens listados: ' + listaMateriais.quantidadeItensListados);
+    $('#nomeAlunoTitulo').text(' Lista de materiais do aluno: ' + aluno);
+
 
     if ($('#nomeAluno').valid()
         && $('#possoGastar').valid()
         && $('#materialEscolar').valid()
         && $('#Quantidade').valid()
-        && $('#precoUnitario').valid()){
-            adicionarLinhaTabela(listaMateriais);
-            $('#Quantidade').val('');
-        console.log('validado'); 
+        && $('#precoUnitario').valid()) {
+        adicionarLinhaTabela(listaMateriais);
+        $('#Quantidade').val('');
+        console.log('validado');
     }
-    
-console.log(listaMateriais);
+
+    console.log(listaMateriais);
 
 }
 
 function habilitarBotao() {
-  if($('#possoGastar').valid()
-  &&$('#nomeAluno').valid()){
-    $('#botaoAdicionar').attr('disabled',false);
-  }else{
-    $('#botaoAdicionar').attr('disabled',true);  
-  }  
+    if ($('#possoGastar').valid()
+        && $('#nomeAluno').valid()) {
+        $('#botaoAdicionar').attr('disabled', false);
+    } else {
+        $('#botaoAdicionar').attr('disabled', true);
+    }
 }
-   
-
 
 
 
@@ -94,28 +94,33 @@ function adicionarLinhaTabela(objeto) {
     var tr = tabela.insertRow(1);
     tr.innerHTML = '<td>' + objeto.material + '</td>' +
         '<td>' + objeto.quantidade + '</td>' +
-        '<td>' + objeto.precoUnitario + '</td>'+
+        '<td>' + objeto.precoUnitario + '</td>' +
         '<td>' + objeto.total + '</td>';
 }
 
-function adicionarItensLista() {
+function carregarListbox() {
 
     var itensDaLista = ['Caneta',
-    'Lápis',
-    'borracha',
-    'papel ofício',
-    'cartolina',
-    'lapis de cor',
-    'cola',
-    'marca texto',
-    'giz de cera'
-];
+        'Lápis',
+        'borracha',
+        'caderno',
+        'cartolina',
+        'lapis de cor',
+        'cola',
+        'mochila',
+        'giz de cera'
+    ];
 
-itensDaLista.forEach(function(item){
-    $('#materialEscolar').append('<option>' + item + '</option>');
-});
-    
-    
-    //document.querySelector('select').innerHTML= '<option>Caderno</option>' +
-   
+    itensDaLista.forEach(function (item) {
+        $('#materialEscolar').append('<option>' + item + '</option>');
+    });
+
+
 }
+/*
+criar array listaItensComprados
+listaMateriais.material
+listaMateriais.precoUnitario
+listaMateriais.quantidade
+listaMateriais.total
+*/
